@@ -2,12 +2,12 @@ import pickle
 from sklearn.linear_model import LogisticRegression
 from flask import Flask
 from flask_restx import Api, Resource, fields
-from werkzeug.contrib.fixers import ProxyFix
-from werkzeug.middleware.proxy_fix import ProxyFix
+#from werkzeug.contrib.fixers import ProxyFix
+#from werkzeug.middleware.proxy_fix import ProxyFix
 
 model = pickle.load(open('model.pkl', 'rb'))
 app = Flask(__name__)
-app.wsgi_app = ProxyFix(app.wsgi_app)
+#app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(app, version='1.0', title='ML API Heart', validate=True)
 
 ns = api.namespace('heart', description='HD model')
@@ -47,4 +47,4 @@ class HeartClassification(Resource):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run() #debug=True
