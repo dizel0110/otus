@@ -1,1 +1,3 @@
+AutoML: Автоматические методы обучения AutoML. Датасет: https://www.kaggle.com/c/mercedes-benz-greener-manufacturing/overview
+Docker (структура, применение, деплой): git push -f или работа в production (Flask API для модели машинного обучения)
 
